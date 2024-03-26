@@ -19,7 +19,7 @@ As your application grows, you might want to consider a more integrated setup. T
 <img width="560" alt="Screenshot 2024-03-26 162422" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/d1ac596f-aac2-4035-9e3d-98714d292922">
 
 
-##### What is JSX?
+#### What is JSX?
 
 
 <img width="547" alt="Screenshot 2024-03-26 162649" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/a4a91c16-db7a-4cce-981e-69e851646a36">
@@ -30,7 +30,7 @@ It is called JSX, and it is a syntax extension to JavaScript. We recommend using
 
 JSX produces React “elements”.
 
-##### why JSX?
+#### why JSX?
 
 React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
 
@@ -39,7 +39,7 @@ Instead of artificially separating technologies by putting markup and logic in s
 React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
 
 
-##### JSX is an Expression Too
+#### JSX is an Expression Too
 
 
 After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
@@ -48,7 +48,7 @@ After compilation, JSX expressions become regular JavaScript function calls and 
 This means that you can use JSX inside of if statements and for loops, assign it to variables, accept it as arguments, and return it from functions.
 
 
-##### JSX Represents Objects
+#### JSX Represents Objects
 
 
 Babel compiles JSX down to React.createElement() calls.

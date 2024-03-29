@@ -133,5 +133,11 @@ In our experience, thinking about how the UI should look at any given moment, ra
 
 ### Function and Class Components:
 
+The simplest way to define a component is to write a JavaScript function:
+<img width="519" alt="Screenshot 2024-03-29 150052" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/7820f11b-43ec-4c20-8bc2-e9989cf3b9ec">
 
+
+
+
+This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
 

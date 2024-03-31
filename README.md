@@ -141,3 +141,100 @@ The simplest way to define a component is to write a JavaScript function:
 
 This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
 
+
+
+You can also use an ES6 class to define a component:
+
+
+<img width="560" alt="Screenshot 2024-03-31 124319" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/759e518c-4dbe-4439-9fe8-fcb7e41659d3">
+
+
+#### The above two components are equivalent from React’s point of view.
+
+
+### Rendering a Component
+
+Previously, we only encountered React elements that represent DOM tags:
+
+<img width="556" alt="Screenshot 2024-03-31 124548" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/8f65da4b-1c1c-476c-95ef-50b13404e907">
+
+However, elements can also represent user-defined components:
+
+
+<img width="557" alt="Screenshot 2024-03-31 124617" 
+src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/d32cfb1a-0fcf-4623-b920-e325760860cc">
+
+
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+
+
+<img width="566" alt="Screenshot 2024-03-31 124801" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/f7f5579a-e26e-439a-b287-b9d4568bde22">
+
+
+### Composing Components:
+
+Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+
+For example, we can create an App component that renders Welcome many times:
+
+
+<img width="560" alt="Screenshot 2024-03-31 124912" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/e95c8890-34b4-488d-be30-e165cb0e64bf">
+
+
+### Extracting Components:
+
+Don’t be afraid to split components into smaller components.
+
+
+<img width="278" alt="Screenshot 2024-03-31 125145" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/040cccd2-af87-485a-b808-c547c6861449">
+
+
+It accepts author (an object), text (a string), and date (a date) as props, and describes a comment on a social media website.
+
+This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let’s extract a few components from it.
+
+First, we will extract Avatar:
+
+<img width="565" alt="Screenshot 2024-03-31 125254" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/53b4c719-3782-4112-aa76-0c53f0ae8fc4">
+
+
+The Avatar doesn’t need to know that it is being rendered inside a Comment. This is why we have given its prop a more generic name: user rather than author.
+
+We recommend naming props from the component’s own point of view rather than the context in which it is being used.
+
+We can now simplify Comment a tiny bit:
+
+
+<img width="574" alt="Screenshot 2024-03-31 125424" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/4e391578-9165-4b3a-969b-72cf27ddf336">
+
+Next, we will extract a UserInfo component that renders an Avatar next to the user’s name:
+
+
+<img width="557" alt="Screenshot 2024-03-31 125555" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/a294085f-fa80-424a-91a4-275da8e8e3b3">
+
+This lets us simplify Comment even further:
+
+<img width="554" alt="Screenshot 2024-03-31 125641" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/a1440fa6-61b7-4c03-9204-92897e3d9070">
+
+
+
+### Props are Read-Only:
+
+Whether you declare a component as a function or a class, it must never modify its own props. Consider this sum function:
+
+<img width="564" alt="Screenshot 2024-03-31 125809" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/37782c19-e5e4-429b-a762-c27059f1a92c">
+
+Such functions are called “pure” because they do not attempt to change their inputs, and always return the same result for the same inputs.
+
+In contrast, this function is impure because it changes its own input:
+
+
+<img width="566" alt="Screenshot 2024-03-31 125904" src="https://github.com/iamganeshsalunkhe/REACT.JS/assets/143490640/806fb5a3-1a26-43d2-8248-a2612cb7a460">
+
+
+
+React is pretty flexible but it has a single strict rule:
+
+#### All React components must act like pure functions with respect to their props.
+
+Of course, application UIs are dynamic and change over time. In the next section, we will introduce a new concept of “state”. State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
